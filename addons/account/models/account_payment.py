@@ -573,6 +573,7 @@ class AccountPayment(models.Model):
         Can't be done using the regular 'required=True' because the field is a computed editable stored one.
         '''
         for pay in self:
+            continue
             if not pay.payment_method_id:
                 raise ValidationError(_("Please define a payment method on your payment."))
 
